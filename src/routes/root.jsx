@@ -129,9 +129,9 @@ export default function Root() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white text-slate-900">
+    <div className="min-h-screen bg-slate-100 text-slate-900">
       <div className="flex min-h-screen">
-        <aside className="w-80 border-r bg-white px-6 py-8 shadow-sm overflow-y-auto">
+        <aside className="w-80 border-r border-slate-300 bg-slate-100 px-6 py-8 overflow-y-auto">
           <div className="mb-8 flex items-center gap-3">
             <h1 className="font-semibold text-base">Frontend Assessment</h1>
           </div>
@@ -150,7 +150,7 @@ export default function Root() {
                   name="province"
                   value={filters.province}
                   onChange={onProvinceChange}
-                  className="w-full appearance-none rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200"
+                  className="w-full appearance-none rounded-xl border border-slate-300 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-200"
                 >
                   <option value="">Pilih Provinsi</option>
                   {regions.provinces.map((p) => (
@@ -186,7 +186,7 @@ export default function Root() {
                   value={filters.regency}
                   onChange={onRegencyChange}
                   disabled={!selectedProvince}
-                  className="w-full appearance-none rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200 disabled:bg-slate-100 disabled:text-slate-400"
+                  className="w-full appearance-none rounded-xl border border-slate-300 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-200 disabled:bg-slate-200 disabled:text-slate-500"
                 >
                   <option value="">
                     {selectedProvince ? 'Pilih Kota/Kabupaten' : 'Pilih Provinsi dulu'}
@@ -224,7 +224,7 @@ export default function Root() {
                   value={filters.district}
                   onChange={onDistrictChange}
                   disabled={!selectedRegency}
-                  className="w-full appearance-none rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-300 focus:outline-none focus:ring-2 focus:ring-sky-200 disabled:bg-slate-100 disabled:text-slate-400"
+                  className="w-full appearance-none rounded-xl border border-slate-300 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm transition-all focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-200 disabled:bg-slate-200 disabled:text-slate-500"
                 >
                   <option value="">
                     {selectedRegency ? 'Pilih Kecamatan' : 'Pilih Kota/Kabupaten dulu'}
@@ -263,7 +263,7 @@ export default function Root() {
         </aside>
 
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="border-b bg-white/80 backdrop-blur px-6 py-4">
+          <header className="border-b border-slate-300 bg-white px-6 py-4">
             <div className="flex items-center justify-start">
               <nav className="breadcrumb text-sm text-slate-400">
                 <span>Indonesia</span>
@@ -285,74 +285,76 @@ export default function Root() {
             </div>
           </header>
 
-          <section className="flex-1 bg-white px-8 py-8">
+          <section className="flex-1 bg-slate-100 px-8 py-8">
             <main className="h-full">
               <div className="mx-auto flex h-full max-w-4xl flex-col items-center justify-center text-center">
-                <div className="text-[11px] font-semibold text-sky-400 tracking-widest mb-4">
-                  PROVINSI
-                </div>
-                <div className="text-5xl font-black tracking-tight text-slate-800 drop-shadow-sm">
-                  {selectedProvince ? selectedProvince.name : '-'}
-                </div>
+                <div className="w-full px-10 py-12">
+                  <div className="text-[11px] font-semibold text-slate-500 tracking-widest mb-4">
+                    PROVINSI
+                  </div>
+                  <div className="text-5xl font-black tracking-tight text-slate-900">
+                    {selectedProvince ? selectedProvince.name : '-'}
+                  </div>
 
-                <div className="my-10 text-slate-200">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 5v14"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M7 14l5 5 5-5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                  <div className="my-10 flex justify-center text-slate-200">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 5v14"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M7 14l5 5 5-5"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-                <div className="text-[11px] font-semibold text-sky-400 tracking-widest mb-4">
-                  KOTA / KABUPATEN
-                </div>
-                <div className="text-5xl font-black tracking-tight text-slate-800 drop-shadow-sm">
-                  {selectedRegency ? selectedRegency.name : '-'}
-                </div>
+                  <div className="text-[11px] font-semibold text-slate-500 tracking-widest mb-4">
+                    KOTA / KABUPATEN
+                  </div>
+                  <div className="text-5xl font-black tracking-tight text-slate-900">
+                    {selectedRegency ? selectedRegency.name : '-'}
+                  </div>
 
-                <div className="my-10 text-slate-200">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 5v14"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M7 14l5 5 5-5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                  <div className="my-10 flex justify-center text-slate-200">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 5v14"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M7 14l5 5 5-5"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
 
-                <div className="text-[11px] font-semibold text-sky-400 tracking-widest mb-4">
-                  KECAMATAN
-                </div>
-                <div className="text-5xl font-black tracking-tight text-slate-800 drop-shadow-sm">
-                  {selectedDistrict ? selectedDistrict.name : '-'}
+                  <div className="text-[11px] font-semibold text-slate-500 tracking-widest mb-4">
+                    KECAMATAN
+                  </div>
+                  <div className="text-5xl font-black tracking-tight text-slate-900">
+                    {selectedDistrict ? selectedDistrict.name : '-'}
+                  </div>
                 </div>
               </div>
             </main>
